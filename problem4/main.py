@@ -1,6 +1,10 @@
 def palindrome(input_string):
-    return 'error response'
-
+    lenght = len(input_string)
+    for i in range (0, lenght//2):
+        if input_string[i] == input_string[lenght -i -1]:
+            return True
+        
+    return False
 
 if __name__ == '__main__':
     print(palindrome("civic")) # True
