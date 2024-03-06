@@ -8,11 +8,16 @@ def is_prima(N):
     return True
 
 def full_prima(N):
-    str_number = str(N)
-    for digit in str_number:
-        if is_prima(int(digit)):
-            return True
+    if N <= 0:
         return False
+    
+    while N > 0:
+        digit = N % 10
+        if not is_prima(digit):
+            return False
+        N //= 10
+    return True
+
 
 if __name__ == '__main__':
     print(full_prima(2)) # True
